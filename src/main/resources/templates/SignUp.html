@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center"><i data-feather="user"></i>Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+       <!-- 
+                  		<form:form action="/signup" method="POST" modelAttribute="savedata">
+							<form:input  class="form-control" path="firstname" placeholder="First Name" />
+							<form:input  class="form-control" path="middlename" placeholder="Middle Name" />
+							<form:input  class="form-control" path="lastname" placeholder="Last Name" /> -->
+
+							
+                  		<form th:action="@{/signup}" method="POST" th:object="${savedata}">
+							<input type="text" th:field="*{firstname}"  class="form-control" placeholder="First Name" />
+							<input  type="text" class="form-control" th:field="*{middlename}" placeholder="Middle Name" />
+							<input  type="text" class="form-control" th:field="*{lastname}" placeholder="Last Name" />
+						
+							<h2 class="title mb-2">Login information</h2>
+							<input  type="text"  class="form-control" placeholder="Email Address" th:field="*{email}"/>
+							<input type="password" th:field="*{password}" class="form-control" placeholder="Password" />
+							<input type="password" class="form-control" placeholder="Confirm Password" required>
+
+							
+							<div class="form-footer">
+								<button type="submit" class="btn btn-primary">Create Account<button>
+							</div><!-- End .form-footer -->
+						</form>
+
+            
+              </div>
+            </div>
+            </div>
+             </body>
+</html>
